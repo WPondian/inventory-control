@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background__login{
+    background-image: url(../img/lua-2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+}
+
+
+.background__cadastro{
+    background-image: url(../img/space.jpg);
+    background-size: cover;
+}
+
+
+.background__inicio{
+    background-image: url(../img/lua-4.jpg);
+    background-size: cover;
+}
