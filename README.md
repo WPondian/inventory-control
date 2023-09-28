@@ -1,2 +1,3 @@
-# inventory-control
- inventory control system. 
+# inventory-control system.
+
+ Project created with the intention of learning.
