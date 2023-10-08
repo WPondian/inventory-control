@@ -40,6 +40,11 @@ switch ($url) {
     case '/login/valida_login':
         LoginController::chamaValidaLogin();
         break;
+    case '/deslogar':
+        session_destroy();
+        session_reset();
+        header("Location: /login");
+        break;
     default:
         echo "Erro 404";
         break;

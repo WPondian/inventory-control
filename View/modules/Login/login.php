@@ -5,34 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../../../src/css/output.css" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="../../../src/img/icone-aba.svg">
     <title>Login</title>
 </head>
 
 <body>
     <main class="min-h-screen flex flex-col justify-center items-center background__login">
         <?php if (isset($_SESSION['erroLogin']) && $_SESSION['erroLogin']) { ?>
-            <section class="absolute top-36">
+            <div id="divErroLogin" class="absolute top-36">
                 <div class="relative py-3 pl-4 pr-10 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
                     <p>Login ou senha inválido!</p>
                     <span class="absolute inset-y-0 right-0 flex items-center mr-4">
                         <svg class="w-4 h-4 fill-current" role="button" viewBox="0 0 20 20"><path d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
                     </span>
                 </div>
-            </section>
+            </div>
         <?php } ?>
         <section class="border-solid border-2 rounded p-10 w-1/4 border-white">
             <form class="flex flex-col gap-3" action="/login/valida_login" method="post">
                 <label class="text-white font-bold text-lg" for="login">Login:</label>
-                <input class="p-2 rounded" type="text" id="login" name="login" maxlength="50">
+                <input class="p-2 rounded-full" type="text" id="login" name="login" maxlength="50">
 
                 <label class="text-white font-bold text-lg" for="senha">Senha:</label>
-                <input class="p-2 rounded" type="password" id="senha" name="senha" maxlength="50">
+                <input class="p-2 rounded-full" type="password" id="senha" name="senha" maxlength="50">
 
-                <button class="text-white transition ease-in-out delay-150 bg-gray-400 hover:-translate-y-1 hover:scale-110 hover:text-cor-paleta-1 hover:border-cor-paleta-1 hover:bg-gray-300 duration-300 text-lg font-bold border-solid border-2 rounded-full py-2 mt-4" type="submit">Entrar</button>
+                <button class="text-white self-center transition ease-in-out w-1/2 delay-150 hover:-translate-y-1 hover:scale-110 hover:text-cor-paleta-2 hover:bg-gray-100 duration-300 text-lg font-bold border-solid border-2 rounded-full py-2 mt-11" id="btnLogar" type="button">Entrar</button>
             </form>
 
-            <form action="/cadastro_usuario/form" class="flex flex-col gap-3">
-                <button class="text-white transition ease-in-out delay-150 bg-gray-400 hover:-translate-y-1 hover:scale-110 hover:text-cor-paleta-1 hover:border-cor-paleta-1 hover:bg-gray-300 duration-300 text-lg font-bold border-solid border-2 rounded-full py-2 mt-11" type="submit">Cadastrar</button>
+            <form action="/cadastro_usuario/form" class="flex justify-center">
+                <button class="text-white transition ease-in-out delay-150 w-1/2 hover:-translate-y-1 hover:scale-110 hover:text-cor-paleta-2 hover:bg-gray-100 duration-300 text-lg font-bold border-solid border-2 rounded-full py-2 mt-8" id="btnCadastrar" type="submit">Cadastrar</button>
             </form>
         </section>
     </main>
@@ -42,5 +43,5 @@
         </div>
     </footer>
 </body>
-
+    <script src="../../../src/js/Login/login.js?uniqid() ?>"></script>
 </html>

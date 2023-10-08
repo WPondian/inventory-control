@@ -7,7 +7,7 @@ module.exports = {
         'cor-paleta-1' : '#0454d4',
         'cor-paleta-2' : '#40c0cb',
         'cor-paleta-3' : '#f9f2e7',
-        'cor-paleta-4' : '#aee239',
+        'cor-paleta-4' : '#14F78B',
         'cor-paleta-5' : '#8fbe00',
       },
     },
