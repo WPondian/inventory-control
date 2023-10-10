@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+
+    if(!$_SESSION['usuarioLogado']){
+        header("Location: /login");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

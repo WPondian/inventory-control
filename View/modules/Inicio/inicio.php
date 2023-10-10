@@ -1,4 +1,11 @@
-<?php session_start();?>
+<?php 
+    session_start();
+
+    if(!$_SESSION['usuarioLogado']){
+        header("Location: /login");
+        exit;
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +36,7 @@
         <section class="absolute left-0 top-1/4 bg-white rounded-r-lg w-12">
             <ul>
                 <li class="font-bold py-4 text-xl text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:rounded-tr-lg hover:bg-gray-100 duration-300">
-                    <a class="p-3" href="http://localhost:8000/View/modules/Cortes/cortes.php"><em class="fa-solid fa-boxes-stacked"></em></a>
+                    <a class="p-3" href="/cortes"><em class="fa-solid fa-boxes-stacked"></em></a>
                     <a class="hidden" href="#">Cortes</a>
                 </li>
                 <li class="font-bold py-4 text-xl text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-gray-100 duration-300">

@@ -4,6 +4,7 @@
 include 'Controller/PessoaController.php';
 include 'Controller/UsuarioController.php';
 include 'Controller/LoginController.php';
+include 'Controller/CortesController.php';
 
 //$_SERVER['REQUEST_URI'] vai pegar a url que o usuario quer acessar
 //parse_url extrai o que tem depois da barra
@@ -19,18 +20,6 @@ switch ($url) {
     case '/login':
         PessoaController::login();
         break;
-    case '/pessoa':
-        PessoaController::index();
-        break;
-    case '/pessoa/form':
-        PessoaController::form();
-        break;
-    case '/pessoa/form/save':
-        PessoaController::save();
-        break;
-    case '/pessoa/delete':
-        PessoaController::delete();
-        break;
     case '/cadastro_usuario/form/save':
         UsuarioController::save();
         break;
@@ -40,9 +29,13 @@ switch ($url) {
     case '/login/valida_login':
         LoginController::chamaValidaLogin();
         break;
+    case '/cortes':
+        CortesController::listaCortes();
+        break;
     case '/deslogar':
+        session_start();
         session_destroy();
-        session_reset();
+        unset( $_SESSION );
         header("Location: /login");
         break;
     default:

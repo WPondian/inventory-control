@@ -17,6 +17,7 @@ class LoginController
         if ($resultadoValidacao) {
             session_start();
             $_SESSION['erroLogin'] = false;
+            $_SESSION['usuarioLogado'] = true;
             $_SESSION['nomeUsuario'] = $resultadoValidacao['nome'];
             $teste = (object)['erro' => false, 'mensagem' => 'Sucesso'];
 
@@ -24,6 +25,7 @@ class LoginController
         } else {
             unset($_SESSION['nomeUsuario']);
 
+            $_SESSION['usuarioLogado'] = false;
             $_SESSION['erroLogin'] = true;
 
             $teste = (object)['erro' => true, 'mensagem' => 'Erro'];
