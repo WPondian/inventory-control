@@ -1,6 +1,4 @@
 <?php 
-    session_start();
-
     if(!$_SESSION['usuarioLogado']){
         header("Location: /login");
         exit;
@@ -25,7 +23,7 @@
             <button type="button" class="font-bold text-lg h-14 w-28 text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:rounded-br-lg hover:bg-gray-100 duration-300" name="btnMenu">Menu <em class="fa-solid fa-bars"></em></button>
         </div>
         <div class="flex justify-center items-center bg-white h-12 w-1/3 rounded-b-lg rounded-bl-lg">
-            <h2 class="w-96 font-bold text-2xl text-cor-paleta-2 uppercase">Cortes<em class="fa-solid fa-boxes-stacked ml-4"></em></h2>
+            <h2 class="w-96 font-bold text-2xl text-cor-paleta-2 uppercase"><?= $_SESSION['paginaAtual']?><em class="<?= $_SESSION['iconePaginaAtual']?> ml-4"></em></h2>
         </div>
         <div class="flex justify-center items-center bg-white h-12 w-28 rounded-bl-lg">
             <form action="/deslogar" method="post">
@@ -36,20 +34,24 @@
     <!-------------Menu------------->
     <section class="absolute left-0 top-1/4 bg-white rounded-r-lg w-14">
         <ul>
-            <li class="font-bold py-4 text-xl border-l-8 border-solid border-cor-paleta-4 text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-115 hover:rounded-tr-lg hover:bg-gray-100 duration-300">
-                <a class="p-3" href="#"><em class="fa-solid fa-boxes-stacked"></em></a>
+            <li class="font-bold py-4 text-xl <?= $_SESSION['paginaAtual'] == 'Início' ? 'border-l-8 border-solid border-cor-paleta-4' : ''?> text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-115 hover:rounded-tr-lg hover:bg-gray-100 duration-300">
+                <a class="p-3" href="/inicio"><em class="fas fa-home"></em></a>
+                <a class="hidden" href="#">Início</a>
+            </li>
+            <li class="font-bold py-4 text-xl <?= $_SESSION['paginaAtual'] == 'Cortes' ? 'border-l-8 border-solid border-cor-paleta-4' : ''?> text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-115 hover:rounded-tr-lg hover:bg-gray-100 duration-300">
+                <a class="p-3" href="/cortes"><em class="fa-solid fa-boxes-stacked"></em></a>
                 <a class="hidden" href="#">Cortes</a>
             </li>
-            <li class="font-bold py-4 text-xl text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-115 hover:bg-gray-100 duration-300">
-                <a class="p-3" href="#"><em class="fa-solid fa-users"></em></a>
+            <li class="font-bold py-4 text-xl  <?= $_SESSION['paginaAtual'] == 'Costureiras' ? 'border-l-8 border-solid border-cor-paleta-4' : ''?> text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-115 hover:bg-gray-100 duration-300">
+                <a class="p-3" href="/costureiras"><em class="fa-solid fa-users"></em></a>
                 <a class="hidden" href="#">Costureiras</a>
             </li>
-            <li class="font-bold py-4 text-xl text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-115 hover:bg-gray-100 duration-300">
-                <a class="p-3" href="#"><em class="fa-solid fa-file-lines"></em></a>
+            <li class="font-bold py-4 text-xl  <?= $_SESSION['paginaAtual'] == 'Relatórios' ? 'border-l-8 border-solid border-cor-paleta-4' : ''?> text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-115 hover:bg-gray-100 duration-300">
+                <a class="p-3" href="/relatorios"><em class="fa-solid fa-file-lines"></em></a>
                 <a class="hidden" href="#">Relatorios</a>
             </li>
-            <li class="font-bold py-4 text-xl text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-115 hover:rounded-br-lg hover:bg-gray-100 duration-300">
-                <a class="p-3" href="#"><em class="fa-solid fa-user-pen"></em></a>
+            <li class="font-bold py-4 text-xl  <?= $_SESSION['paginaAtual'] == 'Perfil' ? 'border-l-8 border-solid border-cor-paleta-4' : ''?> text-cor-paleta-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-115 hover:rounded-br-lg hover:bg-gray-100 duration-300">
+                <a class="p-3" href="/perfil"><em class="fa-solid fa-user-pen"></em></a>
                 <a class="hidden" href="#">Perfil</a>
             </li>
         </ul>

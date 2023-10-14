@@ -12,7 +12,7 @@
             <div>
                 <h3 class="text-left ml-14 mt-14 font-bold text-lg text-cor-paleta-2 uppercase">Filtros :</h3>
             </div>
-            <div class="items-end ml-14 flex gap-8 my-8">
+            <div class="items-end ml-14 flex gap-4 my-8">
                 <div>
                     <label for="nomeCorte" class="block text-left text-cor-paleta-2 font-medium text-lg">Nome Corte:</label>
                     <input type="text" name="nomeCorte" id="nomeCorte" class="mt-1 focus:border-teal focus:outline-none p-2 px-3 w-full rounded-full active:text-yellow-400" maxlength="50">
@@ -26,12 +26,12 @@
                     <input type="text" name="referenciaCorte" id="referenciaCorte" class="mt-1 p-2 px-3 w-full rounded-full focus:border-teal focus:outline-none" maxlength="50">
                 </div>
                 <div>
-                    <button type="button" name="btnBuscarCorte" id="btnBuscarCorte" class="inline-block shrink-0 rounded-full border border-cor-paleta-2 bg-cor-paleta-2 px-12 py-2 text-base font-bold text-white transition hover:bg-transparent hover:text-cor-paleta-2 active:text-cor-paleta-2">
+                    <button type="button" name="btnBuscarCorte" id="btnBuscarCorte" class="inline-block shrink-0 rounded-full border border-cor-paleta-2 bg-cor-paleta-2 px-6 py-2 text-base font-bold text-white transition hover:bg-transparent hover:text-cor-paleta-2 active:text-cor-paleta-2">
                         Buscar
                     </button>
                 </div>
                 <div class="ml-auto mr-14">
-                    <button type="button" name="btnBuscarCorte" id="btnBuscarCorte" class="inline-block shrink-0 rounded-full border border-cor-paleta-2 bg-cor-paleta-2 px-12 py-2 text-base font-bold text-white transition hover:bg-transparent hover:text-cor-paleta-2 active:text-cor-paleta-2">
+                    <button type="button" name="btnBuscarCorte" id="btnBuscarCorte" class="inline-block shrink-0 rounded-full border border-cor-paleta-2 bg-cor-paleta-2 px-6 py-2 text-base font-bold text-white transition hover:bg-transparent hover:text-cor-paleta-2 active:text-cor-paleta-2">
                         <em class="fa-solid fa-plus"></em> Cadastrar
                     </button>
                 </div>

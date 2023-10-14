@@ -25,7 +25,7 @@ btn.login.addEventListener('click', () => {
                 return;
            }
 
-           window.location = 'http://localhost:8000/View/modules/Inicio/inicio.php';
+           window.location = 'http://localhost:8000/inicio';
         }
     };
     xhr.open("POST", "/login/valida_login", true);

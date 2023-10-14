@@ -19,6 +19,7 @@ class LoginController
             $_SESSION['erroLogin'] = false;
             $_SESSION['usuarioLogado'] = true;
             $_SESSION['nomeUsuario'] = $resultadoValidacao['nome'];
+            $_SESSION['paginaAtual'] = 'Inicio'; 
             $teste = (object)['erro' => false, 'mensagem' => 'Sucesso'];
 
             echo json_encode($teste);
@@ -33,4 +34,10 @@ class LoginController
             echo json_encode($teste);
         }
     }
+    
+    public static function login()
+    {
+        include 'View/modules/Login/login.php';
+    }
+
 }
